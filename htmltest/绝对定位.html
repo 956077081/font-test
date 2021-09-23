@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--绝对定位脱离文档流   使用定位必须使用position 使用 绝对定位 最近一级父级不是相对定位则相对body来定位，父级为相对定位则当前绝对定位是相当于父级元素-->
+<!--       使用绝对定位  父相（相对定位）子绝  绝对定位脱离文档流-->
+        <div style="height: 2000px;width: 800px;border: 1px  solid red">
+            <div style="border: 1px  solid red;width: 100px;height: 500px;position: absolute;right: 20px;top: 100px;"></div>
+        </div>
+        <div style="height: 400px;width: 400px;border: 1px  solid red;position: absolute">
+        </div>
+        <div style="height: 400px;width: 500px;border: 1px  solid black;">
+        </div>
+</body>
+</html>

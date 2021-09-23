@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul > li:first-child{
+            background: aquamarine;
+        }
+
+        /*将伪类从条件中剔除*/
+        ul > li:not(:first-child){
+            background: red;
+        }
+
+        /*选中第奇数个为红色  2n+1奇数个  2n为偶数个时   -n+5前5个   5+n从第五个开始 */
+        ul > li:nth-child(2n+1){
+            background: red;
+        }
+        /*选中第奇数个为红色  2n+1奇数个  2n为偶数个时   -n+5前5个   5+n从第五个开始
+        nth-of-type  和 nth-child   nth-child  先选2n+1的标签 再看是否是li元素
+        */
+        /*ul > li:nth-of-type(2n+1)   {*/
+        /*    background: red;*/
+        /*}*/
+        /*访问过的链接*/
+        a:link{
+            color: red;
+        }
+        /*未访问过的链接*/
+        a:visited{
+            color: aquamarine;
+        }
+        /*鼠标移入时*/
+        a:hover{
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>第一个元素</li>
+        <li>第二个元素</li>
+    </ul>
+</div>
+<div>
+    <a  id="a_over" href="www.baidu.com">访问过的链接</a>
+    <a id="a_new" href="www.baidu.com">未访问过的链接</a>
+
+</div>
+</body>
+</html>

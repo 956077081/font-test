@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #cccccc;
+
+            /*取消边框重叠*/
+            margin-left: -1px;
+        }
+        div:hover{
+            /*position relative來保证盒子占住其他盒子*/
+            position: relative;
+            z-index: 1;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+        <div>1</div><div>2</div>
+</body>
+</html>

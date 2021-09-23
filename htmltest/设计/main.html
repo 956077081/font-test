@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            width: 1200px;
+            margin: auto;
+            border: 2px solid #cccccc;
+        }
+        .head{
+            height: 40px;
+            padding-top: 5px;
+        }
+        .head ul li  a {
+            text-decoration: none;
+            color: black;
+
+        }
+        .head ul li  a:hover {
+            color: deepskyblue;
+            border-bottom: 1px  solid  deepskyblue;
+        }
+        .head ul li   {
+            list-style: none;
+            float: left;
+            margin-right: 20px;;
+        }
+        .head > div{
+            float: left;
+        }
+        .search{
+            padding-top: 10px;
+            width: 600px;
+        }
+        .search input{
+            width: 100px;
+            height: 25px;
+            float: left;
+            background: deepskyblue;
+        }
+        .search button{
+            float: left;
+            height: 30px;
+            width: 40px;
+            border: 0px;
+            background: url("../images/a.jpg");
+        }
+        dt,dd{
+
+            margin-left: 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="head">
+        <div style="padding-top: 10px"> <img style="height: 20px;width: 40px" src="../images/a.jpg"></div>
+        <div>
+            <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">建议</a></li>
+            <li><a href="#">删除</a></li>
+            </ul>
+        </div>
+        <div class="search" >
+            <input placeholder="请输入"/>
+            <button value="确定"></button>
+        </div>
+    </div>
+    <div class="nav"></div>
+    <div class="content"></div>
+    <div class="footer"></div>
+</div>
+<div style="float: right">
+<dl>
+    <dt>关于学成网</dt>
+    <dd><a href="#">第一页</a></dd>
+    <dd><a href="#">第二页</a></dd>
+</dl>
+</div>
+</body>
+</html>

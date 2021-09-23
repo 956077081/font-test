@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*伪元素(表示页面中一些并不真实存在的元素（特殊位置）)  伪元素开头使用::
+            ::first-letter  第一个字母
+            ::first-line  第一行
+            ::selection 选中的内容
+            ::before
+            ::after
+            before 和after必须配合content来使用
+        */
+        p::first-letter{
+            font-size: 60px;
+        }
+        p::first-line{
+            color: aquamarine;
+        }
+        p::selection{
+            color: red;
+        }
+        p::before{
+            content: 'p标签的开始';
+        }
+    </style>
+</head>
+<body>
+  <p>hello world
+
+      $data:DataFact($result:(isIdctContains("apply_address","兰州") &&(isIdctContains("base_idnum","62010", "62012", "62011")
+      || isIdctContains("base_idcard_addr","兰州")
+      || isIdctContains("base_idcard_sign_addr","兰州")
+      ||
+      isIdctContains("base_acc_fund_pay_sit", "620100")
+      || isIdctEquals("apply_is_credit_whitelist","Y") || !isIdctEmpty("apply_credit_whitelist_prod_code")) ))
+      eval(!$result)
+
+
+      $data:DataFact($result:(isIdctEquals("apply_credit_whitelist_prod_code","nyd") && isIdctContains("apply_address","兰州")  &&!(isIdctContains("base_idnum","62010", "62012", "62011")
+      || isIdctContains("base_idcard_addr","兰州")
+      || isIdctContains("base_idcard_sign_addr","兰州")
+      ||
+      isIdctContains("base_acc_fund_pay_sit", "620100")
+      ) ))
+      eval($result)
+  </p>
+
+</body>
+</html>

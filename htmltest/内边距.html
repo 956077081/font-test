@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <style>
+
+       /*盒子垂直方向超长时，可以通过overflow来显示*/
+       /*
+       overflow:visible;  默认超长时可见
+          overflow:scroll; 超长时滚动
+         overflow:hidden;  超长时隐藏
+
+       */
+
+       .bt1{
+           width: 200px;
+           height: 200px;
+           background: aquamarine;
+           overflow:hidden;
+       }
+       .bt2{
+           margin: 0 auto;
+           left: 20px;
+           width: 100px;
+           height: 100px;
+           background: gray;
+       }
+   </style>
+</head>
+<body>
+    <div class="bt1">
+        <div class="bt2">
+            HelloWorld
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 90px;
+            height: 400px;
+            margin: 100px auto;
+            background: red;
+            /*超长自动换行 （默认）*/
+            /*white-space: normal;*/
+            /*超长也强制显示一行*/
+
+
+            /*white-space: nowrap;*/
+            /*!*超长省略号*!*/
+            /*overflow: hidden;*/
+            /*text-overflow: ellipsis;*/
+
+
+            /*多行的时的省略号*/
+            display:  -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+
+</head>
+<body>
+        <div>你说你礼貌吗？你说我说的对不对呢</div>
+</body>
+</html>

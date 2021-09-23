@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            display: flex;
+            /*1 flex-direction 用于设置主轴方向 默认一行显示   */
+            flex-direction: row;
+            /*2  设置子元素排列样式 start  end center space-between两边靠边 分开  */
+            justify-content:space-between ;
+            /*3  当子元素 宽度大于当前行时 默认不换行  会挤压盒子大小*/
+            flex-wrap: wrap;
+            /*4 侧轴居中 适用于单行*/
+            align-items:center;
+            /* 5 多行时 （单行时无效）  侧轴子元素排序*/
+            align-content: space-between;
+            width: 500px;
+            height: 400px;
+            border: 10px solid red;
+        }
+        div span{
+            border: 1px solid transparent;
+            width: 100px;
+            height: 150px;
+            background: #cccccc;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div>
+            <span>1</span>
+            <span>3</span>
+            <span>2</span>
+            <span>4</span>
+            <span>6</span>
+            <span>7</span>
+            <span class="aa">8</span>
+        </div>
+</body>
+</html>

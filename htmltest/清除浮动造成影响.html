@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin-right: 10px;
+
+        }
+        /*第一种方式*/
+        .clearfloat{
+            clear: both;
+        }
+        /*第二种方式通过设置下拉来自动放大div宽度*/
+        .clearfloat2{
+            overflow: auto;
+        }
+        /*第三种伪元素来设置*/
+        .clearfloat3:after{
+            content: "";
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+        /*适应ie6和ie7*/
+        .clearfloat3{
+            *zoom: 1;
+        }
+    </style>
+</head>
+<body>
+    <div  style="width: 600px" class="clearfloat3"  >
+        <div class="d1" style="float: left">1</div>
+        <div class="d1"  style="float: left">2 </div>
+    </div>
+    <div class="d1" style="background: blue;width: 700px"></div>
+</body>
+</html>

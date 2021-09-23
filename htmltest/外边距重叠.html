@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*垂直外边距重叠  只会有一个有效
+        兄弟元素中取最大的一个
+        特列为  margin为 一个正一个负时 取合作为margin值
+        */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background: aquamarine;
+            margin-bottom: 200px;
+        }
+        .box2{
+            margin-top: 200px;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2"> box2</div>
+</body>
+
+
+</html>
