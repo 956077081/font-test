@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 800px;
+            display: flex;
+            margin: auto;
+            margin-top: 60px;
+        }
+
+        .menu {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 2px solid transparent;
+            margin-left: 30px;
+            padding: 10px;
+            background: pink;
+
+        }
+
+        .menu ul li {
+            list-style: none;
+            margin-top: 10px;
+
+        }
+
+        .menu ul li p {
+            display: inline-block;
+            width: 45px;
+            text-align: left;
+            color: white;
+
+        }
+
+        .menu ul {
+            height: 300px;
+        }
+
+        .menu ul li input {
+            outline: none;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            padding: 10px;
+            background: pink;
+        }
+
+        .parts {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #000;
+            background: #000000;
+            overflow: hidden;
+        }
+
+        .parts_child {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform-origin: right bottom;
+            box-shadow: 0 0 1px #000 inset;
+        }
+
+        .parts_child:nth-child(odd) {
+            background: #f3359a;
+        }
+
+        .parts_child:nth-child(even) {
+            background: lightpink;
+        }
+
+        .parts_child:nth-child(1) {
+            transform: rotate(0deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(2) {
+            transform: rotate(45deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(3) {
+            transform: rotate(90deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(4) {
+            transform: rotate(135deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(5) {
+            transform: rotate(180deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(6) {
+            transform: rotate(225deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(7) {
+            transform: rotate(270deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(8) {
+            transform: rotate(315deg) skewY(45deg);
+        }
+
+        .text {
+            width: 150px;
+            height: 150px;
+            transform-origin: center center 0;
+            transform: skewY(-45deg) rotate(-22.5deg) translate(10px, 70px);
+            -webkit-transform: skewY(-45deg) rotate(-22.5deg) translate(10px, 70px);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 170px;
+            left: 170px;
+            background: #9966CC;
+            box-shadow: 0 0 8px #000000 inset;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 50%;
+            font-weight: bold;
+            color: white;
+        }
+
+        .point {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: 0;
+            left: 190px;
+            border-top: 40px solid #9966CC;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+
+        .menu {
+            width: 220px;
+            height: 400px;
+            border: 1px solid aquamarine;
+        }
+        .mess{
+            width: 200px;
+            color: fuchsia;
+            position: absolute;
+            font-size: 20px;
+            font-family: "Microsoft YaHei", 微软雅黑;
+            text-shadow: 1px  0.5px  fuchsia;
+            text-align: center;
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="box">
+        <div class="parts">
+            <div class="parts_child">
+                <div id="part1" class="text">
+                    干饭王
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part2" class="text">
+                    鱼香肉丝
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part3" class="text">
+                   (今饿肚子吧）
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part4" class="text">
+                    食堂干饭王是也！
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part5" class="text">
+                    啥也不是，干饭第一
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part6" class="text">
+                    老板来份面条
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part7" class="text">
+                    水果
+                </div>
+            </div>
+            <div class="parts_child">
+                <div id="part8" class="text">
+                    那就米线了
+                </div>
+            </div>
+
+        </div>
+        <div class="btn">转一转</div>
+        <div class="point"></div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><p>one</p>   <input maxlength="10" type="text" id="in1" onkeyup="setPart(this)"></li>
+            <li><p>two</p>   <input maxlength="10" type="text" id="in2"  onkeyup="setPart(this)"></li>
+            <li><p>three</p> <input maxlength="10" type="text" id="in3"  onkeyup="setPart(this)"></li>
+            <li><p>four</p>  <input maxlength="10" type="text" id="in4" onkeyup="setPart(this)"></li>
+            <li><p>five</p>  <input maxlength="10" type="text" id="in5" onkeyup="setPart(this) "></li>
+            <li><p>six</p>   <input maxlength="10" type="text" id="in6" onkeyup="setPart(this)"></li>
+            <li><p>seven</p> <input maxlength="10" type="text" id="in7" onkeyup="setPart(this)"></li>
+            <li><p>eight</p> <input maxlength="10" type="text" id="in8" onkeyup="setPart(this)"></li>
+        </ul>
+        <div class="mess">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    var currentPart =0;
+    function initData() {
+        $('.parts_child .text').each(function () {
+            let id = $(this).attr("id");
+            let num = id.substr(4);
+            $("#in" + num).val($(this).text().trim());
+        })
+    }
+
+    initData();
+    var message = ['干饭喽！', '哼，今天要多吃哦', '不行，今天要多吃点！', '天大地大，干饭最大!',
+        '干饭不积极，脑壳有问题!', '干啥啥不行，干饭第一名!', '大漠孤烟直，干饭不能迟!',
+        '大漠孤烟直，干饭不能迟!', '黄河入海流，干饭我最牛!', '英雄不问出处，干饭不问斤数!', '干饭人胃口大，一张大嘴吃天下!',
+        '干饭人爱犯困，直到饭点才精神!'
+    ]
+    var reg = 0;
+
+    function clickBtn() {
+        // 旋转圈数
+        let n1 = Math.floor((Math.random() * 10) % 5 + 4);
+        //旋转格数
+        let n2 = Math.floor((Math.random() * 10) % 8 + 1);
+        currentPart=n2;
+        console.log(n1+"|"+n2)
+        reg = n1 * 360 + n2 * 45 + 22.5;
+        $(this).unbind().css("cursor", "wait");
+        $('.parts').css({
+            "transition": "all 8s ease",
+            "transform": "rotate(" + reg + "deg)",
+            "-webkit-transform": "rotate(" + reg + "deg)",
+            "-webkit-animation-fill-mode":"forward"
+        })
+
+    }
+
+    $('.btn').bind('click', clickBtn);
+    $('.parts')[0].addEventListener('transitionend', function () {
+        $('.btn').bind('click', clickBtn).css("cursor", "pointer");
+        result();
+    })
+    function result() {
+        var mess = message[(Math.floor(Math.random() * 100)) % (message.length)];
+        let number = (reg-22.5)%360;
+        let  n =Math.floor(number /45);
+         if(n==0){
+             n=1
+         } else {
+            n= 8-n+1;
+         }
+        $(".mess").html($("#in"+(n)).val())
+        alert(mess);
+        $('.parts').css({
+            "transition":"none",
+            "transform":"none",
+            "-webkit-transform":"none"
+        });
+    }
+
+    function setPart(part) {
+        let value = $(part).val();
+        let id = $(part).attr("id").substr(2);
+        $("#part"+id).html(value);
+    }
+</script>
+</html>
