@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            max-width: 100%;
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @keyframes move {
+            0% {
+                -webkit-transform: rotateX(13deg) rotateY(0deg);
+            }
+            100% {
+                -webkit-transform: rotateX(13deg) rotateY(360deg);
+            }
+        }
+
+        .main {
+            position: absolute;
+            width: 800px;
+            display: flex;
+            margin:  auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            margin-top: 150px;
+        }
+
+        .menu {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 2px solid transparent;
+            margin-left: 30px;
+            padding: 10px;
+            background: pink;
+
+        }
+
+        .menu ul li {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .menu ul li p {
+            display: inline-block;
+            width: 45px;
+            text-align: left;
+            color: white;
+
+        }
+
+        .menu ul {
+            height: 300px;
+        }
+
+        .menu ul li input {
+            outline: none;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            padding: 10px;
+            background: pink;
+        }
+
+        .parts {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #000;
+            background: #000000;
+            overflow: hidden;
+        }
+
+        .parts_child {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform-origin: right bottom;
+            box-shadow: 0 0 1px #000 inset;
+        }
+
+        .parts_child:nth-child(odd) {
+            background: #f3359a;
+        }
+
+        .parts_child:nth-child(even) {
+            background: lightpink;
+        }
+
+        .parts_child:nth-child(1) {
+            transform: rotate(0deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(2) {
+            transform: rotate(45deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(3) {
+            transform: rotate(90deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(4) {
+            transform: rotate(135deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(5) {
+            transform: rotate(180deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(6) {
+            transform: rotate(225deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(7) {
+            transform: rotate(270deg) skewY(45deg);
+        }
+
+        .parts_child:nth-child(8) {
+            transform: rotate(315deg) skewY(45deg);
+        }
+
+        .text {
+            width: 150px;
+            height: 150px;
+            transform-origin: center center 0;
+            transform: skewY(-45deg) rotate(-22.5deg) translate(10px, 70px);
+            -webkit-transform: skewY(-45deg) rotate(-22.5deg) translate(10px, 70px);
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 170px;
+            left: 170px;
+            background: #9966CC;
+            box-shadow: 0 0 8px #000000 inset;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 50%;
+            font-weight: bold;
+            color: white;
+        }
+
+        .point {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: 0;
+            left: 190px;
+            border-top: 40px solid #9966CC;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+
+        .menu {
+            width: 220px;
+            height: 400px;
+            border: 1px solid aquamarine;
+        }
+
+        .mess {
+            width: 200px;
+            color: fuchsia;
+            position: absolute;
+            font-size: 20px;
+            font-family: "Microsoft YaHei", 微软雅黑;
+            text-shadow: 1px 0.5px fuchsia;
+            text-align: center;
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="jsi-cherry-container" class="container">
+    <div class="main">
+        <div class="box">
+            <div class="parts">
+                <div class="parts_child">
+                    <div id="part1" class="text">
+                        干饭王
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part2" class="text">
+                        鱼香肉丝
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part3" class="text">
+                        (今饿肚子吧）
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part4" class="text">
+                        食堂干饭王是也！
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part5" class="text">
+                        啥也不是，干饭第一
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part6" class="text">
+                        老板来份面条
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part7" class="text">
+                        水果
+                    </div>
+                </div>
+                <div class="parts_child">
+                    <div id="part8" class="text">
+                        那就米线了
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn">转一转</div>
+            <div class="point"></div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><p>one</p>   <input maxlength="10" type="text" id="in1" onkeyup="setPart(this)"></li>
+                <li><p>two</p>   <input maxlength="10" type="text" id="in2" onkeyup="setPart(this)"></li>
+                <li><p>three</p> <input maxlength="10" type="text" id="in3" onkeyup="setPart(this)"></li>
+                <li><p>four</p>  <input maxlength="10" type="text" id="in4" onkeyup="setPart(this)"></li>
+                <li><p>five</p>  <input maxlength="10" type="text" id="in5" onkeyup="setPart(this) "></li>
+                <li><p>six</p>   <input maxlength="10" type="text" id="in6" onkeyup="setPart(this)"></li>
+                <li><p>seven</p> <input maxlength="10" type="text" id="in7" onkeyup="setPart(this)"></li>
+                <li><p>eight</p> <input maxlength="10" type="text" id="in8" onkeyup="setPart(this)"></li>
+            </ul>
+            <div class="mess">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+
+
+    var currentPart = 0;
+
+    function initData() {
+        $('.parts_child .text').each(function () {
+            let id = $(this).attr("id");
+            let num = id.substr(4);
+            $("#in" + num).val($(this).text().trim());
+        })
+    }
+
+    initData();
+    var message = ['干饭喽！', '哼，今天要多吃哦', '不行，今天要多吃点！', '天大地大，干饭最大!',
+        '干饭不积极，脑壳有问题!', '干啥啥不行，干饭第一名!', '大漠孤烟直，干饭不能迟!',
+        '大漠孤烟直，干饭不能迟!', '黄河入海流，干饭我最牛!', '英雄不问出处，干饭不问斤数!', '干饭人胃口大，一张大嘴吃天下!',
+        '干饭人爱犯困，直到饭点才精神!'
+    ]
+    var reg = 0;
+
+    function clickBtn() {
+        // 旋转圈数
+        let n1 = Math.floor((Math.random() * 10) % 5 + 4);
+        //旋转格数
+        let n2 = Math.floor((Math.random() * 10) % 8 + 1);
+        currentPart = n2;
+        console.log(n1 + "|" + n2)
+        reg = n1 * 360 + n2 * 45 + 22.5;
+        $(this).unbind().css("cursor", "wait");
+        $('.parts').css({
+            "transition": "all 8s ease",
+            "transform": "rotate(" + reg + "deg)",
+            "-webkit-transform": "rotate(" + reg + "deg)",
+            "-webkit-animation-fill-mode": "forward"
+        })
+
+    }
+
+    $('.btn').bind('click', clickBtn);
+    $('.parts')[0].addEventListener('transitionend', function () {
+        $('.btn').bind('click', clickBtn).css("cursor", "pointer");
+        setTimeout(result(),2000)
+        let number = (reg - 22.5) % 360;
+        let n = Math.floor(number / 45);
+        if (n == 0) {
+            n = 1
+        } else {
+            n = 8 - n + 1;
+        }
+        $(".mess").html($("#in" + (n)).val());
+    })
+
+    function result() {
+        var mess = message[(Math.floor(Math.random() * 100)) % (message.length)];
+        alert(mess);
+        $('.parts').css({
+            "transition": "none",
+            "transform": "none",
+            "-webkit-transform": "none"
+        });
+    }
+    function setPart(part) {
+        let value = $(part).val();
+        let id = $(part).attr("id").substr(2);
+        $("#part" + id).html(value);
+    }
+
+
+
+    var RENDERER = {
+        INIT_CHERRY_BLOSSOM_COUNT: 30,
+        MAX_ADDING_INTERVAL: 10,
+
+        init: function() {
+            this.setParameters();
+            this.reconstructMethods();
+            this.createCherries();
+            this.render();
+            if (
+                navigator.userAgent.match(
+                    /(phone|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+                )
+            ) {
+                var box = document.querySelectorAll('.box')[0];
+                console.log(box, '移动端');
+                box.style.marginTop = '65%';
+            }
+        },
+        setParameters: function() {
+            this.$container = $('#jsi-cherry-container');
+            this.width = this.$container.width();
+            this.height = this.$container.height();
+            this.context = $('<canvas />')
+                .attr({ width: this.width, height: this.height })
+                .appendTo(this.$container)
+                .get(0)
+                .getContext('2d');
+            this.cherries = [];
+            this.maxAddingInterval = Math.round(
+                (this.MAX_ADDING_INTERVAL * 1000) / this.width
+            );
+            this.addingInterval = this.maxAddingInterval;
+        },
+        reconstructMethods: function() {
+            this.render = this.render.bind(this);
+        },
+        createCherries: function() {
+            for (
+                var i = 0,
+                    length = Math.round(
+                        (this.INIT_CHERRY_BLOSSOM_COUNT * this.width) / 1000
+                    );
+                i < length;
+                i++
+            ) {
+                this.cherries.push(new CHERRY_BLOSSOM(this, true));
+            }
+        },
+        render: function() {
+            requestAnimationFrame(this.render);
+            this.context.clearRect(0, 0, this.width, this.height);
+
+            this.cherries.sort(function(cherry1, cherry2) {
+                return cherry1.z - cherry2.z;
+            });
+            for (var i = this.cherries.length - 1; i >= 0; i--) {
+                if (!this.cherries[i].render(this.context)) {
+                    this.cherries.splice(i, 1);
+                }
+            }
+            if (--this.addingInterval == 0) {
+                this.addingInterval = this.maxAddingInterval;
+                this.cherries.push(new CHERRY_BLOSSOM(this, false));
+            }
+        }
+    };
+    var CHERRY_BLOSSOM = function(renderer, isRandom) {
+        this.renderer = renderer;
+        this.init(isRandom);
+    };
+    CHERRY_BLOSSOM.prototype = {
+        FOCUS_POSITION: 300,
+        FAR_LIMIT: 600,
+        MAX_RIPPLE_COUNT: 100,
+        RIPPLE_RADIUS: 100,
+        SURFACE_RATE: 0.5,
+        SINK_OFFSET: 20,
+
+        init: function(isRandom) {
+            this.x = this.getRandomValue(
+                -this.renderer.width,
+                this.renderer.width
+            );
+            this.y = isRandom
+                ? this.getRandomValue(0, this.renderer.height)
+                : this.renderer.height * 1.5;
+            this.z = this.getRandomValue(0, this.FAR_LIMIT);
+            this.vx = this.getRandomValue(-2, 2);
+            this.vy = -2;
+            this.theta = this.getRandomValue(0, Math.PI * 2);
+            this.phi = this.getRandomValue(0, Math.PI * 2);
+            this.psi = 0;
+            this.dpsi = this.getRandomValue(Math.PI / 600, Math.PI / 300);
+            this.opacity = 0;
+            this.endTheta = false;
+            this.endPhi = false;
+            this.rippleCount = 0;
+
+            var axis = this.getAxis(),
+                theta =
+                    this.theta +
+                    (Math.ceil(
+                        -(this.y + this.renderer.height * this.SURFACE_RATE) / this.vy
+                        ) *
+                        Math.PI) /
+                    500;
+            theta %= Math.PI * 2;
+
+            this.offsetY =
+                40 * (theta <= Math.PI / 2 || theta >= (Math.PI * 3) / 2 ? -1 : 1);
+            this.thresholdY =
+                this.renderer.height / 2 +
+                this.renderer.height * this.SURFACE_RATE * axis.rate;
+            this.entityColor = this.renderer.context.createRadialGradient(
+                0,
+                40,
+                0,
+                0,
+                40,
+                80
+            );
+            this.entityColor.addColorStop(
+                0,
+                'hsl(330, 70%, ' + 50 * (0.3 + axis.rate) + '%)'
+            );
+            this.entityColor.addColorStop(
+                0.05,
+                'hsl(330, 40%,' + 55 * (0.3 + axis.rate) + '%)'
+            );
+            this.entityColor.addColorStop(
+                1,
+                'hsl(330, 20%, ' + 70 * (0.3 + axis.rate) + '%)'
+            );
+            this.shadowColor = this.renderer.context.createRadialGradient(
+                0,
+                40,
+                0,
+                0,
+                40,
+                80
+            );
+            this.shadowColor.addColorStop(
+                0,
+                'hsl(330, 40%, ' + 30 * (0.3 + axis.rate) + '%)'
+            );
+            this.shadowColor.addColorStop(
+                0.05,
+                'hsl(330, 40%,' + 30 * (0.3 + axis.rate) + '%)'
+            );
+            this.shadowColor.addColorStop(
+                1,
+                'hsl(330, 20%, ' + 40 * (0.3 + axis.rate) + '%)'
+            );
+        },
+        getRandomValue: function(min, max) {
+            return min + (max - min) * Math.random();
+        },
+        getAxis: function() {
+            var rate = this.FOCUS_POSITION / (this.z + this.FOCUS_POSITION),
+                x = this.renderer.width / 2 + this.x * rate,
+                y = this.renderer.height / 2 - this.y * rate;
+            return { rate: rate, x: x, y: y };
+        },
+        renderCherry: function(context, axis) {
+            context.beginPath();
+            context.moveTo(0, 40);
+            context.bezierCurveTo(-60, 20, -10, -60, 0, -20);
+            context.bezierCurveTo(10, -60, 60, 20, 0, 40);
+            context.fill();
+
+            for (var i = -4; i < 4; i++) {
+                context.beginPath();
+                context.moveTo(0, 40);
+                context.quadraticCurveTo(i * 12, 10, i * 4, -24 + Math.abs(i) * 2);
+                context.stroke();
+            }
+        },
+        render: function(context) {
+            var axis = this.getAxis();
+
+            if (
+                axis.y == this.thresholdY &&
+                this.rippleCount < this.MAX_RIPPLE_COUNT
+            ) {
+                context.save();
+                context.lineWidth = 2;
+                context.strokeStyle =
+                    'hsla(0, 0%, 100%, ' +
+                    (this.MAX_RIPPLE_COUNT - this.rippleCount) /
+                    this.MAX_RIPPLE_COUNT +
+                    ')';
+                context.translate(
+                    axis.x +
+                    this.offsetY * axis.rate * (this.theta <= Math.PI ? -1 : 1),
+                    axis.y
+                );
+                context.scale(1, 0.3);
+                context.beginPath();
+                context.arc(
+                    0,
+                    0,
+                    (this.rippleCount / this.MAX_RIPPLE_COUNT) *
+                    this.RIPPLE_RADIUS *
+                    axis.rate,
+                    0,
+                    Math.PI * 2,
+                    false
+                );
+                context.stroke();
+                context.restore();
+                this.rippleCount++;
+            }
+            if (axis.y < this.thresholdY || !this.endTheta || !this.endPhi) {
+                if (this.y <= 0) {
+                    this.opacity = Math.min(this.opacity + 0.01, 1);
+                }
+                context.save();
+                context.globalAlpha = this.opacity;
+                context.fillStyle = this.shadowColor;
+                context.strokeStyle =
+                    'hsl(330, 30%,' + 40 * (0.3 + axis.rate) + '%)';
+                context.translate(
+                    axis.x,
+                    Math.max(axis.y, this.thresholdY + this.thresholdY - axis.y)
+                );
+                context.rotate(Math.PI - this.theta);
+                context.scale(axis.rate * -Math.sin(this.phi), axis.rate);
+                context.translate(0, this.offsetY);
+                this.renderCherry(context, axis);
+                context.restore();
+            }
+            context.save();
+            context.fillStyle = this.entityColor;
+            context.strokeStyle = 'hsl(330, 40%,' + 70 * (0.3 + axis.rate) + '%)';
+            context.translate(
+                axis.x,
+                axis.y + Math.abs(this.SINK_OFFSET * Math.sin(this.psi) * axis.rate)
+            );
+            context.rotate(this.theta);
+            context.scale(axis.rate * Math.sin(this.phi), axis.rate);
+            context.translate(0, this.offsetY);
+            this.renderCherry(context, axis);
+            context.restore();
+
+            if (this.y <= -this.renderer.height / 4) {
+                if (!this.endTheta) {
+                    for (
+                        var theta = Math.PI / 2, end = (Math.PI * 3) / 2;
+                        theta <= end;
+                        theta += Math.PI
+                    ) {
+                        if (this.theta < theta && this.theta + Math.PI / 200 > theta) {
+                            this.theta = theta;
+                            this.endTheta = true;
+                            break;
+                        }
+                    }
+                }
+                if (!this.endPhi) {
+                    for (
+                        var phi = Math.PI / 8, end = (Math.PI * 7) / 8;
+                        phi <= end;
+                        phi += (Math.PI * 3) / 4
+                    ) {
+                        if (this.phi < phi && this.phi + Math.PI / 200 > phi) {
+                            this.phi = Math.PI / 8;
+                            this.endPhi = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (!this.endTheta) {
+                if (axis.y == this.thresholdY) {
+                    this.theta +=
+                        (Math.PI / 200) *
+                        (this.theta < Math.PI / 2 ||
+                        (this.theta >= Math.PI && this.theta < (Math.PI * 3) / 2)
+                            ? 1
+                            : -1);
+                } else {
+                    this.theta += Math.PI / 500;
+                }
+                this.theta %= Math.PI * 2;
+            }
+            if (this.endPhi) {
+                if (this.rippleCount == this.MAX_RIPPLE_COUNT) {
+                    this.psi += this.dpsi;
+                    this.psi %= Math.PI * 2;
+                }
+            } else {
+                this.phi += Math.PI / (axis.y == this.thresholdY ? 200 : 500);
+                this.phi %= Math.PI;
+            }
+            if (this.y <= -this.renderer.height * this.SURFACE_RATE) {
+                this.x += 2;
+                this.y = -this.renderer.height * this.SURFACE_RATE;
+            } else {
+                this.x += this.vx;
+                this.y += this.vy;
+            }
+            return (
+                this.z > -this.FOCUS_POSITION &&
+                this.z < this.FAR_LIMIT &&
+                this.x < this.renderer.width * 1.5
+            );
+        }
+    };
+    $(function() {
+        RENDERER.init();
+    });
+</script>
+</html>
