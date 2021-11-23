@@ -32,33 +32,40 @@
             background: aquamarine;
         }
         .box_child{
-            width: 224px;height: 247px;float:left;background: gray;
-            margin-right: 10px;
-            margin-top: 10px;
+            width: 224px;height: 247px;
+            /*float:left;*/
+            background: gray;
+            margin: 2px 3px;
+            /*margin-right: 10px;*/
+            /*margin-top: 10px;*/
         }
         .footer{
             height: 20px;
             background: blueviolet;
         }
+        .cont{
+            flex-wrap: wrap;
+            display: flex;
+        }
     </style>
 </head>
-<body>
+<body style="overflow-y: scroll">
 <div class="top"></div>
 <div class="banner"></div>
 <div class="box">
     <div style="width: 300px;height: 772px;background: red;float: left">
     </div>
-    <div style="width: 926px;height: 772px;background: pink;float: left">
+    <div class="cont" style="width: 926px;height: 772px;background: pink;float: left">
         <div class="box_child">1</div>
         <div  class="box_child">1</div>
         <div  class="box_child">1</div>
-        <div class="box_child" style="margin-right: 0px">1</div>
+        <div class="box_child" >1</div>
         <div  class="box_child">1</div>
         <div  class="box_child">1</div>
         <div class="box_child">1</div>
-        <div  class="box_child" style="margin-right: 0px">1</div>
+        <div  class="box_child" >1</div>
         <div  class="box_child">1</div>
-        <div  class="box_child" style="margin-right: 0px">1</div>
+        <div  class="box_child" >1</div>
     </div>
 
 </div>

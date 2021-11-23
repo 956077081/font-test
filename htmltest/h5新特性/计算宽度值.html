@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style >
+        *{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
         .son{
             width: calc( 100% - 100px) ;
             height: 200px;
             background: red;
         }
+        div span{
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-        <div style="width: 400px;height: 200px;background: #cccccc">
-                <div class="son"></div>
+
+<!--    布局一般使用flex布局 （inline-block问题在于自动加了边距；需要font-size:0px来取消边框）-->
+<div  style="font-size: 0px">
+        <div style="width:30%;height: 200px;background: #cccccc;display: inline-block;">
+            <span>1 <p>3</p></span>
+<!--                <div class="son"></div>-->
         </div>
+        <div style="width:70%;height: 200px;background: #cccccc;display: inline-block;">
+            <span>2 <p>3</p></span>
+            <!--    <div class="son"></div>-->
+        </div>
+</div>
 </body>
 </html>

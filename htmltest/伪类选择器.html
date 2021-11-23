@@ -12,7 +12,9 @@
         ul > li:not(:first-child){
             background: red;
         }
-
+        ul li{
+            list-style: none;
+        }
         /*选中第奇数个为红色  2n+1奇数个  2n为偶数个时   -n+5前5个   5+n从第五个开始 */
         ul > li:nth-child(2n+1){
             background: red;
@@ -20,9 +22,9 @@
         /*选中第奇数个为红色  2n+1奇数个  2n为偶数个时   -n+5前5个   5+n从第五个开始
         nth-of-type  和 nth-child   nth-child  先选2n+1的标签 再看是否是li元素
         */
-        /*ul > li:nth-of-type(2n+1)   {*/
-        /*    background: red;*/
-        /*}*/
+        ul > li:nth-of-type(2n+1)   {
+            background: red;
+        }
         /*访问过的链接*/
         a:link{
             color: red;
